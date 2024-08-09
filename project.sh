@@ -9,11 +9,10 @@ gpgkey=https://pgp.mongodb.com/server-7.0.asc
 EOF
 sudo yum install -y mongodb-org
 sudo yum install -y git
-git clone https://github.com/mincheol07/reca6team3
 cd ~
+git clone https://github.com/mincheol07/reca6team3
 cd reca6team3
 sudo wget https://truststore.pki.rds.amazonaws.com/global/global-bundle.pem
-
 mongosh --ssl --host docdb-2024-08-09-01-45-16.cluster-cn0y60kek5cj.ap-northeast-2.docdb.amazonaws.com:27017 --sslCAFile global-bundle.pem --username project --password 12345678 --eval "quit()"
 python3 -m venv venv
 source venv/bin/activate
